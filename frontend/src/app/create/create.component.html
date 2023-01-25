@@ -1,0 +1,42 @@
+<div class="container" style="margin-top: 10%;">
+
+
+    <div *ngIf="errormsg" class="alert alert-danger alert-dismissible fade show mt-2" role="alert">
+        <strong>{{errormsg}}</strong> 
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+      </div>
+
+      <div *ngIf="successmsg" class="alert alert-success alert-dismissible fade show mt-2" role="alert">
+        <strong>{{successmsg}}</strong> 
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+      </div>  
+
+
+    <form [formGroup]="medicinesForm" style="background-color: 	#DCDCDC; border-color:#DCDCDC;box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.5); ">
+        <div class="col-lg-8 mt-2" style="margin-left: 15%;">
+            <input type="text" class="form-control" formControlName="Name"  placeholder="med name">
+        </div>
+
+        <div class="col-lg-8 mt-2 " style="margin-left: 15%;">
+            <input type="text" class="form-control" formControlName="price" placeholder="price">
+        </div>
+        
+        <div class="col-lg-8 mt-2" style="margin-left: 15%;">
+            <input type="text" class="form-control" formControlName="type" placeholder="type">
+        </div>
+
+        <div class="col-lg-8 mt-2"style="margin-left: 15%;">
+            <input type="text" class="form-control" formControlName="exp" placeholder="exp">
+        </div>
+
+
+        <div class="col-lg-4 mt-2 " style="margin-left: 38%;"*ngIf="!getparamid" (click)="medicinesSubmit()">
+            <button class="btn btn-sm "style="background-color: #c900ff; color:white;">create</button>
+        </div>
+
+        <div class="col-lg-4 mt-2" *ngIf="getparamid" (click)="medicinesUpdate()">
+            <button class="btn btn-sm" style="background-color: #c900ff; margin-left:110%; color:white;">update</button>
+        </div>
+
+    </form>
+</div>

@@ -1,0 +1,38 @@
+<div class="container " style="background-color: 		#efe8e8; border-color:	#f1ebeb;box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.5);margin-top:10%; ">
+
+  <div *ngIf="successmsg" class="alert alert-success alert-dismissible fade show mt-2" role="alert">
+    <strong>{{successmsg}}</strong> 
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+  </div> 
+  
+
+    <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Name</th>
+            <th scope="col">price</th>
+            <th scope="col">Type</th>
+            <th scope="col">Exp</th>
+            
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor = 'let us of readData'>
+            <th scope="row">{{us.id}}</th>
+            <td>{{us.Name}}</td>
+            <td>{{us.price}}</td>
+            <td>{{us.type}}</td>
+            <td>{{us.exp}}</td>
+            <td>
+              <button class="btn btn-sm " (click)="deleteID(us.id)" style="background-color: red;color:beige;">Delete</button>
+              &nbsp;
+              <a href="/create/{{us.id}}"      class="btn btn-sm" style="background-color: green;color:beige;">Update</a>
+            </td>
+
+          </tr>
+
+        </tbody>
+      </table>
+      
+</div>

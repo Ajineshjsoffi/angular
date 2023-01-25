@@ -1,0 +1,36 @@
+
+<div class="container " style="margin-top:10%; ">
+    <form [formGroup]="signupForm" style=" border-color:#DCDCDC;box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.5); " (ngSubmit)="signupSubmit()">
+
+        <div *ngIf="errmsgshow">
+            <p class="text-danger">{{ errmsg }}</p>
+          </div>
+
+  
+      <div class="mb-3">
+        <input
+          type="text"
+          class="form-control"
+          formControlName="name"
+          placeholder="Enter Your Name"
+        />
+      </div>
+      <div class="mb-3">
+        <input
+          type="email"
+          class="form-control"
+          formControlName="email"
+          placeholder="Enter Your Email ID"
+        />
+      </div>
+      <div class="mb-3">
+        <input
+          type="password"
+          class="form-control"
+          formControlName="password"
+          placeholder="Enter Your Password"
+        />
+      </div>
+      <button class="custom-btn btn-9">signup</button>
+    </form>
+  </div>
